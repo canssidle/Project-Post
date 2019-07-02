@@ -33,6 +33,6 @@ class ReviewTestClass(TestCase):
         self.project.save()
         self.review = Review(id=1,project=self.project,design=10,usability=10,content=10,average=7,user=self.user)
 
-#     #Testing instance
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.review,Review))
+    #Testing instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.review,Review))
