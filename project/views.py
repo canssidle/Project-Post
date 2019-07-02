@@ -40,14 +40,14 @@ def project(request, id):
         form = ReviewForm()
     return render(request, 'project.html', {'project': project, 'reviews': reviews, 'form': form, 'design': design, 'usability': usability, 'content': content, 'average': average})
 
-# def search(request):
-#     if 'site' in request.GET and request.GET['site']:
-#         search_term = request.GET.get('site')
-#         projects = Project.objects.filter(title__icontains = search_term)
-#         message = f'{search_term}'
-#         return render(request, 'search.html', {'projects': projects, 'message': message})
+def search(request):
+    if 'site' in request.GET and request.GET['site']:
+        search_term = request.GET.get('site')
+        projects = Project.objects.filter(title__icontains = search_term)
+        message = f'{search_term}'
+        return render(request, 'search.html', {'projects': projects, 'message': message})
         
-#     return render(request, 'search.html')
+    return render(request, 'search.html')
 
 # class ProfileList(APIView):
 #     def get(self, request, format=None):
