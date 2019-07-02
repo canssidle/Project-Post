@@ -62,18 +62,18 @@ class ProjectList(APIView):
         return Response(serializers.data)
 
 @login_required(login_url='/accounts/login/')
-# def upload_site(request):
-#     if request.method == 'POST':
-#         form = UploadSiteForm(request.POST, request.FILES)
-#         if form.is_valid():
-#             project = form.save(commit=False)
-#             project.user = request.user
-#             project.save()
-#         return redirect('index')
-#     else:
-#         form = UploadSiteForm()
+def upload_site(request):
+    if request.method == 'POST':
+        form = UploadSiteForm(request.POST, request.FILES)
+        if form.is_valid():
+            project = form.save(commit=False)
+            project.user = request.user
+            project.save()
+        return redirect('index')
+    else:
+        form = UploadSiteForm()
 
-#     return render(request, 'upload.html', {'form': form})
+    return render(request, 'upload.html', {'form': form})
 
 # def profile(request, username):
 #     user = User.objects.get(username = username)
