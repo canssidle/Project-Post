@@ -1,17 +1,17 @@
-# from django.test import TestCase
-# from django.contrib.auth.models import User
-# from .models import Project, Profile, Review
+from django.test import TestCase
+from django.contrib.auth.models import User
+from .models import Project, Profile, Review
 
-# # Create your tests here.
-# class ProjectTestClass(TestCase):
-#     # Set up method
-#     def setUp(self):
-#         self.user = User.objects.create_user(username='testuser', password='12345')
-#         self.project = Project(id=1, image = 'path/to/image',title='test',description='test caption',url='path/to/project',user=self.user)
+# Create your tests here.
+class ProjectTestClass(TestCase):
+    # Set up method
+    def setUp(self):
+        self.user = User.objects.create_user(username='testuser', password='12345')
+        self.project = Project(id=1, image = 'path/to/image',title='test',description='test caption',url='path/to/project',user=self.user)
 
-#     #Testing instance
-#     def test_instance(self):
-#         self.assertTrue(isinstance(self.project,Project))
+    #Testing instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.project,Project))
 
 # class ProfileTestClass(TestCase):
 #     # Set up method
