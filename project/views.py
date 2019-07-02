@@ -49,19 +49,19 @@ def search(request):
         
     return render(request, 'search.html')
 
-# class ProfileList(APIView):
-#     def get(self, request, format=None):
-#         all_profiles = Profile.objects.all()
-#         serializers = ProfileSerializer(all_profiles, many=True)
-#         return Response(serializers.data)
+class ProfileList(APIView):
+    def get(self, request, format=None):
+        all_profiles = Profile.objects.all()
+        serializers = ProfileSerializer(all_profiles, many=True)
+        return Response(serializers.data)
 
-# class ProjectList(APIView):
-#     def get(self, request, format=None):
-#         all_projects = Project.objects.all()
-#         serializers = ProjectSerializer(all_projects, many=True)
-#         return Response(serializers.data)
+class ProjectList(APIView):
+    def get(self, request, format=None):
+        all_projects = Project.objects.all()
+        serializers = ProjectSerializer(all_projects, many=True)
+        return Response(serializers.data)
 
-# @login_required(login_url='/accounts/login/')
+@login_required(login_url='/accounts/login/')
 # def upload_site(request):
 #     if request.method == 'POST':
 #         form = UploadSiteForm(request.POST, request.FILES)
