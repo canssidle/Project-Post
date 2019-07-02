@@ -44,8 +44,6 @@ Copy the link and paste in any browser
 
 
 
-
-
 ## Technology and Tools Used
 
  Python3.6 - Programming language
